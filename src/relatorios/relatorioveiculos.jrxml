@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Veiculos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="166f243e-38b4-4153-a9fa-57372f6b9c05">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT id_veiculos,placa,chassi,marca,modelo,proprietario,data_cadastro FROM veiculos ORDER BY PLACA]]>
+	</queryString>
+	<field name="id_veiculos" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="placa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="chassi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="marca" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="modelo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="proprietario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_cadastro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="51" forecolor="#FFFFFF" backcolor="#006666" uuid="c4e2581d-a0ff-42ad-88d3-4fd780c764e8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatórios de Veiculos]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="65" width="555" height="1" uuid="8a903d79-dd27-44cf-a77d-baf00837ca1a"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="31" height="20" uuid="d1bc83ec-b93b-4f1a-8af3-9f05de9e42c3"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="0" width="64" height="20" uuid="35a7ed41-4328-4d84-91ae-476928321681"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Placa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="96" y="0" width="108" height="20" uuid="abfcd562-e118-4c4e-b4d1-2b54f2ed7e14"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Chassi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="204" y="0" width="65" height="20" uuid="e680e6c9-ccad-4f3e-916b-9f75912a916c"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="272" y="0" width="85" height="20" uuid="94d3c279-180a-48ec-b67b-3be23a8e85be"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="357" y="0" width="119" height="20" uuid="948b8b03-547a-4d27-9a34-fb42cff35175"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Proprietário]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="476" y="0" width="91" height="20" uuid="36834bbb-942c-4258-8e10-a09145a8def5"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Cadastro]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="31" height="20" uuid="9cbc30b8-84d5-4ece-bd10-b61256b31c71"/>
+				<textFieldExpression><![CDATA[$F{id_veiculos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="31" y="0" width="65" height="20" uuid="09379bd5-87cf-4009-b043-dafd54097ebb"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="0" width="108" height="20" uuid="64336842-9ffa-4dbe-9123-c6b2e48e309e"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{chassi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="204" y="0" width="65" height="20" uuid="757803ed-9683-4964-b7a6-226d39d384a7"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="0" width="85" height="20" uuid="d326c56a-4791-4144-8725-12f00eb3b43a"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="357" y="0" width="119" height="20" uuid="83a34e1c-fbc4-4f61-858e-8801019e98d8"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{proprietario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="476" y="0" width="79" height="20" uuid="9d78faca-a2b3-415b-9a86-7a8210defe89"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_cadastro}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="537" y="0" width="18" height="20" uuid="62d71c99-7839-4caf-ae95-2ac3aae30573"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="1" width="100" height="19" uuid="0d81bd45-c651-42b1-9f30-514c4ea7ef50"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="58" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,69 @@
+try {
+                float quantidade = 0;
+                String tipo = "";
+
+                conecta.conexao();
+                conecta.executaSQL("SELECT * FROM produto WHERE nome_produto = '" + jTextFieldPesquisarProdutos.getText() + "'");
+                conecta.rs.first();
+
+                quantidade = conecta.rs.getFloat("quantidade");
+                tipo = conecta.rs.getString("unidade");
+
+                if (quantidade >= Float.parseFloat(jTextFieldQuantidade.getText().replace(",", ".")) && tipo.equals("Kg")) {
+
+                    if (!jTextFieldQuantidade.getText().equals("0")) {
+                        
+                        mod.setOs(Integer.parseInt(jTextFieldNOS.getText()));
+                        mod.setNomeProduto((String) jTextFieldPesquisarProdutos.getText());
+                        mod.setQtItem(Float.parseFloat(jTextFieldQuantidade.getText().replace(",", ".")));
+
+                        preco_produto = conecta.rs.getFloat("preco_venda");
+
+                        String nPrecoProduto = df.format(preco_produto).replace(".", ",");
+
+                        mod.setIdVenda(codVenda);
+                        control.adicionaProduto(mod);
+                        preencherTabelaProdutos("SELECT * FROM produto INNER JOIN tab_os_produtos ON produto.id_produto = tab_os_produtos.id_produtos where nome_produto  LIKE '%" + jTextFieldPesquisarProdutos.getText() + "%' ORDER BY nome_produto ASC");
+
+                        jTextFieldQuantidade.setText("");
+                        jTextFieldPesquisarProdutos.setText("");
+                        jTextFieldPesquisarProdutos.requestFocus();
+                        jTextFieldPesquisarProdutos.selectAll();
+
+                        
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "ATENÇÃO!!!\nInsira uma quantidade maior que Zero!");
+                    }
+                } else if (quantidade >= Float.parseFloat(jTextFieldQuantidade.getText().replace(",", ""))) {
+
+                    if (!jTextFieldQuantidade.getText().equals("0")) {
+                        mod.setNomeProduto((String) jTextFieldPesquisarProdutos.getText());
+                        mod.setQtItem(Float.parseFloat(jTextFieldQuantidade.getText().replace(",", ".")));
+
+                        preco_produto = conecta.rs.getFloat("preco_venda");
+
+                        String nPrecoProduto = df.format(preco_produto).replace(".", ",");
+
+                        mod.setIdVenda(codVenda);
+                        control.adicionaProduto(mod);
+                        preencherTabelaProdutos("SELECT * FROM produto INNER JOIN tab_os_produtos ON produto.id_produto = tab_os_produtos.id_produtos where nome_produto  LIKE '%" + jTextFieldPesquisarProdutos.getText() + "%' ORDER BY nome_produto ASC");
+                        
+                        jTextFieldQuantidade.setText("");
+                        jTextFieldPesquisarProdutos.setText("");
+                        jTextFieldPesquisarProdutos.requestFocus();
+                        jTextFieldPesquisarProdutos.selectAll();
+
+                      
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "ATENÇÃO!!!\nInsira uma quantidade maior que Zero!");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Quantidade desejada não disponivel no estoque");
+                }
+
+            } catch (SQLException ex) {
+                Logger.getLogger(FrmVenda.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+
+                conecta.desconecta();
+            }

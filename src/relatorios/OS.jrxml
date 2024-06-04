@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OS" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="742712fb-1a52-43ea-88c1-032c93e86c84">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     empresa.`nome`,
+     empresa.`cnpj`,
+     empresa.`cidade`,
+     empresa.`uf`,
+     empresa.`cep`,
+     empresa.`bairro`,
+     empresa.`rua`,
+     empresa.`telefone`,
+     empresa.`email`,
+     tab_os.`os` AS tab_os_os,
+     tab_os.`data` AS tab_os_data,
+     tab_os.`hora` AS tab_os_hora,
+     tab_os.`consultor` AS tab_os_consultor,
+     tab_os.`situacao_os` AS tab_os_situacao_os,
+     tab_os.`cliente_os` AS tab_os_cliente_os,
+     tab_os.`cpf_cnpj_os` AS tab_os_cpf_cnpj_os,
+     tab_os.`endereco` AS tab_os_endereco,
+     tab_os.`email` AS tab_os_email,
+     tab_os.`ddd` AS tab_os_ddd,
+     tab_os.`telefone` AS tab_os_telefone,
+     tab_os.`modelo_os` AS tab_os_modelo_os,
+     tab_os.`placa` AS tab_os_placa,
+     tab_os.`chassi` AS tab_os_chassi,
+     tab_os.`combustivel` AS tab_os_combustivel,
+     tab_os.`reclamacao1` AS tab_os_reclamacao1,
+     tab_os_produtos.`nome_produto` AS tab_os_produtos_nome_produto,
+     tab_os_produtos.`valor_produto` AS tab_os_produtos_valor_produto,
+     tab_os_produtos.`quantidade` AS tab_os_produtos_quantidade,
+     tab_os_servicos.`descricao` AS tab_os_servicos_descricao,
+     tab_os_servicos.`valor` AS tab_os_servicos_valor,
+     tab_os_servicos.`tempo` AS tab_os_servicos_tempo
+FROM
+     `empresa` empresa,
+     `tab_os` tab_os,
+     `tab_os_produtos` tab_os_produtos,
+     `tab_os_servicos` tab_os_servicos]]>
+	</queryString>
+	<field name="id_empresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomefantasia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cnpj" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ie" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="im" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="crt" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cnae" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ra" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ibge" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="uf" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cep" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bairro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rua" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_uf" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="os" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hora" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="consultor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="situacao_os" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cliente_os" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpf_cnpj_os" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ddd" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="modelo_os" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="placa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="chassi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="combustivel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="reclamacao1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_produto" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_servico" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_produtos" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_produto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor_produto" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="quantidade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descricao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tempo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tab_os_os" class="java.lang.Long"/>
+	<field name="tab_os_data" class="java.lang.String"/>
+	<field name="tab_os_hora" class="java.lang.String"/>
+	<field name="tab_os_consultor" class="java.lang.String"/>
+	<field name="tab_os_situacao_os" class="java.lang.String"/>
+	<field name="tab_os_cliente_os" class="java.lang.String"/>
+	<field name="tab_os_cpf_cnpj_os" class="java.lang.String"/>
+	<field name="tab_os_endereco" class="java.lang.String"/>
+	<field name="tab_os_email" class="java.lang.String"/>
+	<field name="tab_os_ddd" class="java.lang.String"/>
+	<field name="tab_os_telefone" class="java.lang.String"/>
+	<field name="tab_os_modelo_os" class="java.lang.String"/>
+	<field name="tab_os_placa" class="java.lang.String"/>
+	<field name="tab_os_chassi" class="java.lang.String"/>
+	<field name="tab_os_combustivel" class="java.lang.String"/>
+	<field name="tab_os_reclamacao1" class="java.lang.String"/>
+	<field name="tab_os_produtos_nome_produto" class="java.lang.String"/>
+	<field name="tab_os_produtos_valor_produto" class="java.lang.Float"/>
+	<field name="tab_os_produtos_quantidade" class="java.lang.String"/>
+	<field name="tab_os_servicos_descricao" class="java.lang.String"/>
+	<field name="tab_os_servicos_valor" class="java.lang.Float"/>
+	<field name="tab_os_servicos_tempo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="153" splitType="Stretch">
+			<textField>
+				<reportElement x="476" y="111" width="79" height="20" uuid="d895e711-1a70-430a-84d8-a60289241bb3"/>
+				<textElement>
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab_os_data}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="39" width="78" height="20" uuid="9f67f87c-aabb-4b1b-8e75-8fc177fd029c"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bairro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="11" width="311" height="28" uuid="8705fed6-f523-4b6a-9fce-08f2bf7ff25c"/>
+				<textElement>
+					<font fontName="Verdana" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="465" y="131" width="90" height="20" uuid="4526231f-62aa-40cd-bc1e-dec13a61c3e8"/>
+				<textElement>
+					<font fontName="Verdana" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab_os_consultor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="132" width="203" height="20" uuid="462484d8-7b27-44b4-b887-c35655da8e9f"/>
+				<textElement>
+					<font fontName="Verdana" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab_os_situacao_os}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="39" width="171" height="20" uuid="0577f618-a2b0-4a7a-990c-f14d2db5ee1c"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rua}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="446" y="111" width="30" height="20" uuid="7abca58f-37f7-4b88-96b2-6d7990755af0"/>
+				<textElement>
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="111" width="104" height="20" uuid="6bf92dab-0418-40e6-a832-b6dc9182adaa"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ordem de serviço]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="131" width="56" height="20" uuid="9e9bff98-e149-4a92-aeed-77ce330c3a07"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Situação:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="356" y="111" width="56" height="20" uuid="e2213c18-eda0-4d6c-a234-a47e8c3ffcd5"/>
+				<textElement>
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab_os_hora}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="128" y="99" width="427" height="1" uuid="d18ef8b4-d2a4-4af4-b798-fee9c029365a"/>
+			</line>
+			<staticText>
+				<reportElement x="320" y="111" width="36" height="20" uuid="36e28094-65b6-4ae6-88e8-6dcd0b180ff7"/>
+				<textElement>
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="128" y="59" width="142" height="20" uuid="4680e78c-e390-458f-9d30-b1299aab6f01"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cnpj}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="405" y="132" width="60" height="20" uuid="63d19a43-e26c-4648-9041-8878b58bd4e2"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Consultor:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="39" width="7" height="20" uuid="e181ecea-6554-46a4-bfc6-e8465df4861d"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<text><![CDATA[,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="39" width="7" height="20" uuid="df4d3c53-7bbc-461c-b401-8de7306ac14f"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<text><![CDATA[,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="391" y="39" width="55" height="20" uuid="39d3033d-178b-435b-8bc8-328cbb3f3dd7"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="476" y="39" width="79" height="20" uuid="73490a56-2001-4d4b-996a-f928b36584cd"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="79" width="211" height="20" uuid="3a54203e-ed54-4ff1-86fe-986e3f820dd1"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="111" width="19" height="20" uuid="e562b7b9-31cf-4116-8a7b-571b0578c62f"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab_os_os}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="0" width="116" height="151" uuid="50a0b603-546c-41f4-9a3a-29e54bdb4ec7"/>
+				<imageExpression><![CDATA["C:\\Users\\Haurio-PC\\Desktop\\LOGO_UNIANHANGUERA.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="232" y="111" width="36" height="20" uuid="6fb672d4-0390-469e-a7c6-24e03fb2b87f"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[00000]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="152" width="555" height="1" uuid="593cd61e-a017-4bb8-bcac-a42e0ca2e963"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="115" splitType="Stretch">
+			<staticText>
+				<reportElement x="248" y="0" width="108" height="25" uuid="7ca23c67-44ad-4e33-b524-a5bd1ef40f58"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="11" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Dados Cliente]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="489" y="25" width="66" height="20" uuid="98289760-7eda-4ebe-b830-ca94aaad6afc"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab_os_telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="25" width="15" height="20" uuid="b0b7a4df-ce21-4699-8fa8-3f47397508b5"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab_os_ddd}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="68" width="555" height="1" uuid="04e56dfc-f782-4967-b108-fc3c386444b3"/>
+			</line>
+			<textField>
+				<reportElement x="49" y="94" width="144" height="20" uuid="ea733ebd-ccb3-493e-bdfc-038797b781b7"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab_os_modelo_os}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="419" y="25" width="55" height="20" uuid="63416fba-ee40-42cb-9ec5-2346b8378cb9"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contato:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="206" y="45" width="41" height="20" uuid="dc3e0e53-1042-4cb4-8784-de02d354846e"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="283" y="94" width="73" height="20" uuid="0b11cc22-97b0-4a28-af4d-b5df2b550d14"/>
+				<textElement>
+					<font fontName="Verdana" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab_os_placa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="25" width="47" height="20" uuid="173695e4-4cdc-438c-903e-8e48b501dff3"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="246" y="94" width="37" height="20" uuid="3d77b31e-513c-49cf-bd29-9af4f0ee7dff"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Placa:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="45" width="62" height="20" uuid="d7355e56-290e-47b0-91f2-20696d917bce"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="268" y="25" width="100" height="20" uuid="06256f2b-e59c-4291-9795-9e6bdf2b18c7"/>
+				<textFieldExpression><![CDATA[$F{tab_os_cpf_cnpj_os}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="206" y="25" width="62" height="20" uuid="0d539415-fb41-45c6-92a0-ae6e968de94d"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CNPJ/CPF:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="440" y="94" width="106" height="20" uuid="fa2834e7-558f-4f6a-b8cf-22c8603c791e"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab_os_chassi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="94" width="48" height="20" uuid="bfea017b-e924-43a9-88ba-b5b21cf1ddbb"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modelo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="247" y="45" width="167" height="20" uuid="de341db0-bc52-45cc-9421-a039bf2120d1"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab_os_email}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="114" width="555" height="1" uuid="00a7d724-42ba-458e-abbe-9dc30418e8cc"/>
+			</line>
+			<textField>
+				<reportElement x="49" y="25" width="145" height="20" uuid="501c8d5b-f56d-4450-8135-1ee419f14fee"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab_os_cliente_os}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="398" y="94" width="42" height="20" uuid="ae0edcab-3250-4eb7-9b70-2fe3ebe9d711"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Chassi:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="64" y="45" width="130" height="20" uuid="d77aedd0-95d1-4e2c-9247-3e08dab0a1d1"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab_os_endereco}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="249" y="69" width="108" height="25" uuid="8fc73d99-f78a-40e3-82fe-d50f5d436e93"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="11" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Dados Veiculo]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="93" y="1" width="62" height="25" uuid="5fb73b2c-b32d-45a9-adc9-a52411c37460"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="11" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Produtos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="26" width="99" height="20" uuid="3739b11e-675b-47c6-b740-6f6714e1e38a"/>
+				<textElement>
+					<font fontName="Verdana" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="26" width="51" height="20" uuid="de3c8fc9-705c-4e39-bde0-3f5761c2f23e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="221" y="26" width="47" height="20" uuid="5b58da85-e581-4957-837f-6cfc5cfe8937"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="376" y="26" width="89" height="20" uuid="aaa87e6e-c83c-4395-a23c-c757df49696d"/>
+				<textElement>
+					<font fontName="Verdana" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="26" width="46" height="20" uuid="48dfe908-8b54-4e8b-9484-dd87f3b6f4ca"/>
+				<textElement>
+					<font fontName="Verdana" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="398" y="1" width="67" height="25" uuid="9e9e9637-1d87-481d-8c2f-aba8f0a49942"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="11" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Serviços]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="0" width="100" height="20" uuid="f92eaeec-98ed-43f2-bd28-a02094947645"/>
+				<textFieldExpression><![CDATA[$F{tab_os_produtos_nome_produto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
